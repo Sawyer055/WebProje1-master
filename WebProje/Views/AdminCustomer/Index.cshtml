@@ -1,0 +1,82 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Customer>
+@* <h3 style="color:red;">@TempData["msj"]</h3> *@
+@{
+    // ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Customers</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhoneNumber)
+            </th>
+            <th>
+                Options
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem=>item.CustomerID)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerSurname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerPhoneNumber)
+                    </td>
+
+                    <td>
+                        <a asp-controller="AdminCustomer" asp-action="EditCustomer" asp-route-id="@item.CustomerID" method="post" class="btn btn-info">Edit</a>
+                        <a asp-controller="AdminCustomer" asp-action="DetailsCustomer" asp-route-id="@item.CustomerID" class="btn btn-warning">Route</a>
+                        <a asp-controller="AdminCustomer" asp-action="DeleteCustomer" asp-route-id="@item.CustomerID" method="post" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                @*  <div>
+        <a asp-action="AdminCustomer" asp-action="AddCustomer" asp-route-id="@item.CustomerID" method="post" class="btn btn-success">New Customer</a>
+        </div> *@
+            }
+        }
+
+
+    </tbody>
+
+</table>
+@* <a href="/AdminCustomer/AddCustomer" class="btn btn-success">New Customer</a> *@
+<div>
+    <a asp-controller="AdminCustomer" asp-action="AddCustomer" method="post" class="btn btn-success">New Customer</a>
+</div>
+

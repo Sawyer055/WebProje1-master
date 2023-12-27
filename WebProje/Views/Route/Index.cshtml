@@ -1,0 +1,69 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Route>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Routes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.RouteID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RouteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TakeOff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Landing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RouteID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RouteName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TakeOff)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Landing)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerID)
+                    </td>
+                    <td>
+                        <a asp-controller="Route" asp-action="EditRoute" asp-route-id="@item.RouteID" method="post" class="btn btn-info">Edit</a>
+                        <a href="#" class="btn btn-warning">Plane</a>
+                        <a asp-controller="Route" asp-action="DeleteRoute" asp-route-id="@item.RouteID" method="post" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<a href="/Route/AddRoute" class="btn btn-info">New Route</a>
