@@ -13,5 +13,11 @@ namespace WebProje.Controllers
             var routes=rm.GetRoutes();
             return View(routes);
 		}
-	}
+        [HttpPost]
+        public IActionResult Index(Route route)
+        {
+            var routes = rm.GetRoutes();
+            return View(routes);
+        }
+    }
 }

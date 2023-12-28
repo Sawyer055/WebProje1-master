@@ -40,24 +40,26 @@
 				<div class="row">
 					<div class="booking-form">
 						<form>
-							
+                            @using (Html.BeginForm("Index", "Customer", FormMethod.Post))
+							{
 							<div class="form-group">
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-								@using(Html.BeginForm("Index","Customer",FormMethod.Post))
-								{
+								
+								
 									<div class="form-group">
+										
 										<span class="form-label">Flying from</span>
 										<a  asp-controller="Customer" asp-action="Index" > </a>
-										<input class="form-control" type="text" placeholder="City or airport">
+										<input class="form-control" type="radio" placeholder="City or airport">
 									</div>
-								}
+								
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Flyning to</span>
-										<input class="form-control" type="text" placeholder="City or airport">
+										<input class="form-control" type="" placeholder="City or airport">
 									</div>
 								</div>
 							</div>
@@ -85,6 +87,7 @@
 									</div>
 								</div>
 							</div>
+							}
 						</form>
 					</div>
 				</div>
