@@ -20,7 +20,6 @@ builder.Services.AddAuthentication(
 //    });
 
 
-//builder.Services.AddDbContext<Context>(/*options=>options.UseSqlServer(builder.Configuration.GetConnectionString)("DbConnection")*/);
 
 
 var app = builder.Build();
