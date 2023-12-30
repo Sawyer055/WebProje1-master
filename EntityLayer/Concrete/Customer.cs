@@ -43,6 +43,8 @@ namespace EntityLayer.Concrete
 
         public ICollection<Route> ?Routes { get; set; }
 
-        
+
+
+
     }
 }

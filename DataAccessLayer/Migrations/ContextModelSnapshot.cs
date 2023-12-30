@@ -51,7 +51,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("AdminID");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Customer", b =>
@@ -87,7 +87,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Plane", b =>
@@ -123,7 +123,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("RouteID");
 
-                    b.ToTable("Planes");
+                    b.ToTable("Planes", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Route", b =>
@@ -159,7 +159,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Routes");
+                    b.ToTable("Routes", (string)null);
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Plane", b =>

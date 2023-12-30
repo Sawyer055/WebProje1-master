@@ -15,10 +15,12 @@ namespace DataAccessLayer.Concrete
         public DbSet<Plane> Planes { get; set; }
         public DbSet<Route> Routes { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Seat> Seats { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ProjeDb;Trusted_Connection=True;");
         }
+       
     }
 }

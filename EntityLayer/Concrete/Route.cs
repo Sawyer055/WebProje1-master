@@ -29,6 +29,8 @@ namespace EntityLayer.Concrete
 
         public int? CustomerID { get; set; }
         public virtual Customer Customer { get; set; }
+
+        public Route() { }
         
     }
 }

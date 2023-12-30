@@ -29,7 +29,7 @@ namespace EntityLayer.Concrete
         public int? RouteID { get; set; }
         public virtual Route Route { get; set; }
 
-        public ICollection<Plane> Planes { get; set; }
+        public ICollection<Seat> Seats { get; set; }
 
     }
 }
