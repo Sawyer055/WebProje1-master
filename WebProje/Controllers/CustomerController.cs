@@ -17,6 +17,7 @@ namespace WebProje.Controllers
 		{
 			RouteManager rm = new RouteManager(new EfIRoute());
 			var routes=rm.GetRoutes();
+
 			return View(routes);
 		}
         [HttpPost]

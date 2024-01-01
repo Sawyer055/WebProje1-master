@@ -1,4 +1,7 @@
-﻿@model EntityLayer.Concrete.LoginViewModel;
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model EntityLayer.Concrete.LoginViewModel;
 @{
   Layout = null;
 }
@@ -62,6 +65,7 @@
                             
                             }
                         </form>
+                            <a asp-controller="CustomerLogin" asp-action="Login" class="btn btn-primary">Customer Login</a>
                     </div>
                 </div>
             </div>
